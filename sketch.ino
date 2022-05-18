@@ -7,6 +7,10 @@ RTC_DS1307 rtc;
 //  lcd object : setting register address 0x27
 LiquidCrystal_I2C lcd(0x27, 20, 4);
 
+//  alarm variables
+int alarm_hours = 0;
+int alarm_minutes = 0;
+
 //  clock variables
 int year = 0;
 int month = 0;
@@ -136,9 +140,7 @@ void get_time() {
     lcd_print(0, 2, current_time);
   }
 }
-//  alarm variables
-int alarm_hours = 0;
-int alarm_minutes = 0;
+
 
 
 void set_alarm() {
